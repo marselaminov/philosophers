@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: legunshi <legunshi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/10 17:33:44 by legunshi          #+#    #+#             */
+/*   Updated: 2021/08/10 17:35:34 by legunshi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 long	ft_get_current_time(void)
@@ -44,7 +56,8 @@ void	*ft_routine(void *av)
 		pthread_mutex_unlock(ph->right_f);
 		ft_show_msg(ph, YELLOW"is sleeping"RESET);
 		current_time = ft_get_current_time();
-		while (ft_get_current_time() < (current_time + ph->params->time_to_sleep))
+		while (ft_get_current_time() < (current_time
+				+ ph->params->time_to_sleep))
 			usleep(100);
 		ft_show_msg(ph, MAGENTA"is thinking"RESET);
 	}

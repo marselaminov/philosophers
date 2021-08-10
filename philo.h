@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: legunshi <legunshi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/10 17:33:50 by legunshi          #+#    #+#             */
+/*   Updated: 2021/08/10 17:36:52 by legunshi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHILO_H
 # define PHILO_H
 
@@ -9,14 +21,14 @@
 # include <sys/time.h>
 # include <pthread.h>
 
-# define LOOP 1
+# define LOOP		1
 # define RED		"\x1b[31m"
-# define GREEN	"\x1b[32m"
-# define YELLOW	"\x1b[33m"
-# define BLUE	"\x1b[34m"
+# define GREEN		"\x1b[32m"
+# define YELLOW		"\x1b[33m"
+# define BLUE		"\x1b[34m"
 # define MAGENTA	"\x1b[35m"
-# define CYAN	"\x1b[36m"
-# define RESET	"\x1b[0m"
+# define CYAN		"\x1b[36m"
+# define RESET		"\x1b[0m"
 
 typedef struct s_param
 {
@@ -54,7 +66,7 @@ typedef struct s_all
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_parser(char *av[], t_param *prm);
 int		ft_isdigit(int c);
-void	ft_close();
+void	ft_close(void);
 void	ft_show_msg(t_philo *ph, char *str);
 long	ft_get_current_time(void);
 void	ft_check_philo_index(t_philo *philo);

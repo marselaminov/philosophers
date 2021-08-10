@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: legunshi <legunshi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/10 17:32:43 by legunshi          #+#    #+#             */
+/*   Updated: 2021/08/10 17:37:12 by legunshi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
@@ -40,7 +52,7 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-void	ft_close()
+void	ft_close(void)
 {
 	ft_putstr_fd(strerror(errno), 2);
 	write(1, "\n", 1);

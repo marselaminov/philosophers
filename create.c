@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: legunshi <legunshi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/10 17:32:20 by legunshi          #+#    #+#             */
+/*   Updated: 2021/08/10 17:37:53 by legunshi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 void	ft_init_forks(t_all *all)
@@ -6,13 +18,13 @@ void	ft_init_forks(t_all *all)
 
 	i = -1;
 	all->mutexes = (pthread_mutex_t *)malloc(sizeof
-		(pthread_mutex_t) * all->params.philos_num);
+			(pthread_mutex_t) * all->params.philos_num);
 	if (!all->mutexes)
 		ft_close();
 	while (++i < all->params.philos_num)
 		pthread_mutex_init(&all->mutexes[i], NULL);
 	all->show_msg = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t));
-	pthread_mutex_init(all->show_msg, NULL);	
+	pthread_mutex_init(all->show_msg, NULL);
 }
 
 void	ft_init_philosophers(t_all *all)

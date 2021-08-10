@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   routine.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: legunshi <legunshi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/10 17:34:00 by legunshi          #+#    #+#             */
+/*   Updated: 2021/08/10 17:39:35 by legunshi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 void	ft_show_msg(t_philo *ph, char *str)
 {
 	pthread_mutex_lock(ph->show_msg);
-	printf("%ld\t", ft_get_current_time() -
-		*ph->start);
+	printf("%ld\t", ft_get_current_time()
+		- *ph->start);
 	printf("%d\t%s\n", ph->i, str);
 	if (ft_strcmp(str, RED"died"RESET))
-	//if (str[5] != 'd')
 		pthread_mutex_unlock(ph->show_msg);
 }
 
@@ -65,7 +76,8 @@ void	ft_check_philo_index(t_philo *philo)
 	if (philo->i % 2 != 0)
 	{
 		current_time = ft_get_current_time();
-		while (ft_get_current_time() < (current_time + philo->params->time_to_eat))
-			usleep(100);	
+		while (ft_get_current_time() < (current_time
+				+ philo->params->time_to_eat))
+			usleep(100);
 	}
 }
